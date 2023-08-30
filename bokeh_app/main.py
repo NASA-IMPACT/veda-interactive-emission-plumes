@@ -232,9 +232,9 @@ component = pn.Column(
 
 ACCENT_BASE_COLOR = "#0C3D91"
 template = pn.template.FastListTemplate(
-    site="Emission Plumes",
-    title="You can learn more about how to access this data directly in the VEDA documentation.",
-    logo="https://panel.holoviz.org/_static/logo_stacked.png",
+    site="",
+    title="",
+    logo="https://d36s2ep3ahcq5b.cloudfront.net/browseui/assets/us_ghg_logo.png",
     favicon="https://d36s2ep3ahcq5b.cloudfront.net/browseui/favicon.ico",
     header_background=ACCENT_BASE_COLOR,
     accent_base_color=ACCENT_BASE_COLOR,
