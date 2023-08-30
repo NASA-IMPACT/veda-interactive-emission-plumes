@@ -162,7 +162,7 @@ def create_colorbar():
     # Create an Image widget from the saved image
     output = widgets.Image(value=image, format='png')
 
-    colorbar_control = WidgetControl(widget=output, position='bottomright', transparent_bg=True)
+    colorbar_control = WidgetControl(widget=output, position='bottomleft', transparent_bg=True)
     plt.close(colorbar_fig)
 
     return colorbar_control
@@ -189,14 +189,15 @@ def add_raster(feature):
                 )
                 m.add(TileLayer(url=TILE_URL, max_zoom=24, show_loading=True))
         IDS_ON_MAP.add(feature["id"])
+    
     if len(IDS_ON_MAP) == 1:
-        
+        for control in m.controls:
+            if isinstance(control, WidgetControl):
+                if control.position == "bottomleft":
+                    m.remove(control)    
         colorbar_control = create_colorbar()
         m.add(colorbar_control)
-    # for control in m.controls:
-    #     if isinstance(control, WidgetControl):
-    #         if control.position == "bottomright":
-    #             m.remove(control)
+
 
     
 
